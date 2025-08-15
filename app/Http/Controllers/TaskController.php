@@ -22,7 +22,7 @@ private TaskRepositoryInterface $TaskRepository;
     {
              try {
                 $userId = auth()->id();
-             $all_task = $this->TaskRepository->getAllByUser($userId);
+             $all_task = $this->TaskRepository->getAllByUser($userId, 10);
                    return TaskResource::collection($all_task);
                } catch (\Exception $e) {
             return response()->json([

@@ -4,7 +4,7 @@ namespace App\Repositories\Interfaces;
 
 interface TaskRepositoryInterface
 {
-    public function getAllByUser($userId);
+    public function getAllByUser($userId,$perPage);
     public function getById($id);
     public function create(array $attributes);
     public function update($id, array $attributes);

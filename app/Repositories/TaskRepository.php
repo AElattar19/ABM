@@ -7,9 +7,9 @@ use App\Models\Task; // Assumption: You have a Model with the same name
 
 class TaskRepository implements TaskRepositoryInterface
 {
-    public function getAllByUser($userId)
+    public function getAllByUser($userId, $perPage = 10)
     {
-      return Task::where('user_id', $userId)->get();
+        return Task::where('user_id', $userId)->paginate($perPage);
     }
 
     public function getById($id)
